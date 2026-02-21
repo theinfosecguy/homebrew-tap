@@ -13,11 +13,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Audit formula
-        run: brew audit --strict --online ./Formula/razin.rb
+      - name: Register local tap checkout
+        run: |
+          brew untap theinfosecguy/tap 2>/dev/null || true
+          brew tap theinfosecguy/tap "${GITHUB_WORKSPACE}"
 
-      - name: Install formula from tap source
-        run: brew install --build-from-source ./Formula/razin.rb
+      - name: Audit formula
+        run: brew audit --strict --online theinfosecguy/tap/razin
+
+      - name: Install formula from tap
+        run: brew install --build-from-source theinfosecguy/tap/razin
 
       - name: Run formula test
         run: brew test razin
