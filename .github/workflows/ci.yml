@@ -1,0 +1,23 @@
+name: Tap CI
+
+on:
+  pull_request:
+  push:
+    branches: [master, main]
+
+jobs:
+  audit-and-test:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Audit formula
+        run: brew audit --strict --online ./Formula/razin.rb
+
+      - name: Install formula from tap source
+        run: brew install --build-from-source ./Formula/razin.rb
+
+      - name: Run formula test
+        run: brew test razin
