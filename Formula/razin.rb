@@ -3,8 +3,8 @@ class Razin < Formula
 
   desc "Static analysis scanner for SKILL.md-defined agent skills"
   homepage "https://github.com/theinfosecguy/razin"
-  url "https://files.pythonhosted.org/packages/5e/82/46d0ded28edf107e309393e44ca42a21f3ef8684d137ac75d0d54a2a977e/razin-1.3.1.tar.gz"
-  sha256 "cb7862da370e607cf2c04fd1e0d663d463df89752d8b1423c5489031bd77b792"
+  url "https://files.pythonhosted.org/packages/44/66/25c738e8cf47f5bc79f5a66961252b48a26fcf40cb373fbc454cfa2389e6/razin-1.3.2.tar.gz"
+  sha256 "5198564d7417dcd53c1e8e1cac7d9271d6cf07e333d36b9142107d7094836b77"
   license "MIT"
 
   depends_on "libyaml"
